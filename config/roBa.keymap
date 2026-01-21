@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 //スクロール量変更の定義を追記
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
@@ -68,16 +69,18 @@
     };
 
     behaviors {
-//スクロール用のbehavior追加
+        //スクロール用のbehavior追加
+
         encoder_msc_down_up: encoder_msc_down_up {
-          compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <20>;
-       };
-//スクロール用のbehavior追加ここまで
 
+            tap-ms = <20>;
+        };
+
+        //スクロール用のbehavior追加ここまで
 
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
@@ -100,9 +103,9 @@
 &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 2  &mo 1    &kp SPACE                     &kp BACKSPACE    &kp RETURN                             &kp DEL
             >;
 
-          //  sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
-            sensor-bindings = <&encoder_msc_down_up>;
+            //  sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
 
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         FUNCTION {
@@ -118,7 +121,7 @@
             bindings = <
 &kp N7        &kp N8        &kp N9        &kp EQUAL     &kp PERCENT                                       &kp HASH               &kp AT_SIGN       &kp DOUBLE_QUOTES  &kp SQT        &kp DOLLAR
 &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS      &kp MINUS    &trans         &kp LESS_THAN         &kp GREATER_THAN       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET      &kp TILDE
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &kp SLASH    &kp COMMA      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EXCLAMATION   &kp QUESTION       &kp AMPERSAND  &kp BACKSLASH
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &kp SLASH    &kp COMMA      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE    &trans             &kp AMPERSAND  &kp BACKSLASH
 &kp N0        &kp PERIOD    &kp COLON     &trans        &trans       &trans         &trans                &trans                                                                     &kp PIPE
             >;
         };
