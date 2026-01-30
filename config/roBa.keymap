@@ -66,6 +66,20 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        TO_MAC: TO_MAC {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &bt BT_SEL 0 &to 0>;
+            label = "TO_MAC";
+        };
+
+        TO_WIN: TO_WIN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &bt BT_SEL 1 &to 1>;
+            label = "TO_WIN";
+        };
     };
 
     behaviors {
@@ -99,8 +113,8 @@
             bindings = <
 &mt ESCAPE Q      &kp W         &kp E           &kp R  &kp T                                                   &kp Y       &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D           &kp F  &kp G    &kp LS(LG(RC(NUMBER_4)))      &kp QUESTION     &kp H       &kp J  &kp K      &kp L    &kp MINUS
-&mt RCTRL Z       &kp X         &kp C           &kp V  &lt 6 B  &mt LC(SPACE) TAB             &kp EXCLAMATION  &kp N       &kp M  &kp COMMA  &kp DOT  &kp PLUS
-&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 2  &mo 1    &kp SPACE                     &kp BACKSPACE    &kp RETURN                             &kp DEL
+&mt RCTRL Z       &kp X         &kp C           &kp V  &lt 9 B  &mt LC(SPACE) TAB             &kp EXCLAMATION  &kp N       &kp M  &kp COMMA  &kp DOT  &kp PLUS
+&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 4  &mo 2    &kp SPACE                     &kp BACKSPACE    &kp RETURN                             &kp DEL
             >;
 
             //  sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -108,7 +122,18 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        FUNCTION {
+        BASE_WIN {
+            bindings = <
+&mt ESCAPE Q      &kp W         &kp E           &kp R  &kp T                                                 &kp Y       &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D           &kp F  &kp G    &kp LS(LG(LC(S)))           &kp QUESTION     &kp H       &kp J  &kp K      &kp L    &kp MINUS
+&kp Z             &kp X         &kp C           &kp V  &lt 9 B  &mt LC(INT_HENKAN) TAB      &kp EXCLAMATION  &kp N       &kp M  &kp COMMA  &kp DOT  &kp LEFT_GUI
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 5  &mo 3    &kp SPACE                   &kp BACKSPACE    &kp RETURN                             &kp DEL
+            >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
+        };
+
+        FUNCTION_MAC {
             bindings = <
 &kp F1                &kp F2              &kp F3         &kp F4             &kp F5                         &kp F6     &kp F7          &kp F8        &kp F9     &kp F10
 &trans                &kp LC(LEFT_ARROW)  &kp PAGE_UP    &kp LC(RIGHT)      &kp HOME  &trans      &kp F11  &kp LG(C)  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
@@ -117,7 +142,25 @@
             >;
         };
 
+        FUNCTION_WIN {
+            bindings = <
+&kp F1            &kp F2        &kp F3              &kp F4         &kp F5                         &kp F6     &kp F7          &kp F8        &kp F9     &kp F10
+&none             &none         &kp LC(UP_ARROW)    &none          &kp HOME  &trans      &kp F11  &kp RC(C)  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
+&none             &kp RC(LEFT)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT)  &kp END   &trans      &kp F12  &kp LC(V)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT      &trans         &trans    &trans      &trans   &trans                                              &trans
+            >;
+        };
+
         NUM_MAC {
+            bindings = <
+&kp N7           &kp N8        &kp N9        &kp EQUAL     &kp PERCENT                                       &kp HASH               &kp AT_SIGN       &kp DOUBLE_QUOTES  &kp SQT        &kp DOLLAR
+&kp NUMBER_4     &kp N5        &kp NUMBER_6  &kp PLUS      &kp MINUS    &none          &kp LESS_THAN         &kp GREATER_THAN       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET      &kp TILDE
+&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &kp SLASH    &kp COMMA      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE    &none              &kp AMPERSAND  &kp BACKSLASH
+&mt LEFT_GUI N0  &kp PERIOD    &kp COLON     &trans        &trans       &trans         &trans                &trans                                                                     &kp PIPE
+            >;
+        };
+
+        NUM_WIN {
             bindings = <
 &kp N7           &kp N8        &kp N9        &kp EQUAL     &kp PERCENT                                       &kp HASH               &kp AT_SIGN       &kp DOUBLE_QUOTES  &kp SQT        &kp DOLLAR
 &kp NUMBER_4     &kp N5        &kp NUMBER_6  &kp PLUS      &kp MINUS    &none          &kp LESS_THAN         &kp GREATER_THAN       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET      &kp TILDE
@@ -158,7 +201,7 @@
         layer_6 {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &TO_MAC       &TO_WIN       &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
