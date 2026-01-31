@@ -20,10 +20,11 @@
 #define JP_RBRACKET   BACKSLASH         // ] (JISでは物理的な \ の位置)
 #define JP_CARET      EQUAL             // ^ (JISでは物理的な = の位置)
 #define JP_TILDE      LS(EQUAL)         // ~ (JISではShift+^)
-#define JP_PIPE       LS(INT_RO)        // | (JISではShift+ろ) ※0x89
+#define JP_PIPE       LS(INT_YEN)      // | (JISの「¥」キー + Shift)
 #define JP_UNDERSCORE LS(INT_RO)        // _ (JISではShift+ろ)
 #define JP_YEN        INT_RO            // ¥ (JISでは「ろ」のキー)
 #define JP_BACKQUOTE  LS(LEFT_BRACKET)  // ` (JISではShift+@)
+#define JP_BACKSLASH   INT_YEN           // \ (JISの「¥」キー)
 
 // IME切り替え（Windows用）
 #define JP_EISU       INT_MUHENKAN      // 無変換キーを英数へ
@@ -197,7 +198,7 @@
             bindings = <
 &kp N7           &kp N8        &kp N9        &kp JP_EQUAL     &kp PERCENT                                &kp HASH          &kp JP_AT          &kp JP_DQUOTE    &kp JP_QUOTE      &kp DOLLAR
 &kp NUMBER_4     &kp N5        &kp NUMBER_6  &kp JP_PLUS      &kp MINUS    &none          &kp LESS_THAN  &kp GREATER_THAN  &kp JP_LBRACKET    &kp JP_RBRACKET  &kp JP_CARET      &kp JP_TILDE
-&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp JP_ASTERISK  &kp SLASH    &kp COMMA      &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_UNDERSCORE  &none            &kp JP_AMPERSAND  &kp BACKSLASH
+&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp JP_ASTERISK  &kp SLASH    &kp COMMA      &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_UNDERSCORE  &none            &kp JP_AMPERSAND  &kp JP_BACKSLASH
 &mt LEFT_GUI N0  &kp PERIOD    &kp JP_COLON  &trans           &trans       &trans         &trans         &trans                                                                  &kp JP_PIPE
             >;
         };
