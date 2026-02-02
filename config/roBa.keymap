@@ -62,8 +62,8 @@
         compatible = "zmk,combos";
 
         tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
         };
 
         shift_tab {
@@ -146,7 +146,7 @@
 
         BASE_MAC {
             bindings = <
-&mt ESCAPE Q      &kp W         &kp E           &kp R  &kp T                                                   &kp Y       &kp U  &kp I      &kp O    &kp P
+&kp Q             &kp W         &kp E           &kp R  &kp T                                                   &kp Y       &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D           &kp F  &kp G    &kp LS(LG(RC(NUMBER_4)))      &kp QUESTION     &kp H       &kp J  &kp K      &kp L    &kp MINUS
 &mt RCTRL Z       &kp X         &kp C           &kp V  &lt 9 B  &mt LC(SPACE) TAB             &kp EXCLAMATION  &kp N       &kp M  &kp COMMA  &kp DOT  &kp PLUS
 &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 4  &mo 2    &kp SPACE                     &kp BACKSPACE    &kp RETURN                             &kp DEL
@@ -159,7 +159,7 @@
 
         BASE_WIN {
             bindings = <
-&mt ESCAPE Q      &kp W         &kp E           &kp R  &kp T                                               &kp Y       &kp U  &kp I      &kp O    &kp P
+&kp Q             &kp W         &kp E           &kp R  &kp T                                               &kp Y       &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S         &kp D           &kp F  &kp G    &kp LS(LG(S))             &kp QUESTION     &kp H       &kp J  &kp K      &kp L    &kp MINUS
 &kp Z             &kp X         &kp C           &kp V  &lt 9 B  &mt INT_MUHENKAN TAB      &kp EXCLAMATION  &kp N       &kp M  &kp COMMA  &kp DOT  &kp LEFT_GUI
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 5  &mo 3    &kp SPACE                 &kp BACKSPACE    &kp RETURN                             &kp DEL
@@ -179,10 +179,10 @@
 
         FUNCTION_WIN {
             bindings = <
-&kp F1            &kp F2        &kp F3              &kp F4         &kp F5                         &kp F6     &kp F7          &kp F8        &kp F9     &kp F10
-&none             &none         &kp LC(UP_ARROW)    &none          &kp HOME  &trans      &kp F11  &kp RC(C)  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
-&none             &kp RC(LEFT)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT)  &kp END   &trans      &kp F12  &kp LC(V)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT      &trans         &trans    &trans      &trans   &trans                                              &trans
+&kp F1            &kp F2        &kp F3          &kp F4  &kp F5                         &kp F6     &kp F7          &kp F8        &kp F9     &kp F10
+&none             &none         &kp PAGE_UP     &none   &kp HOME  &trans      &kp F11  &kp RC(C)  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
+&none             &none         &kp PAGE_DOWN   &none   &kp END   &trans      &kp F12  &kp LC(V)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT  &trans  &trans    &trans      &trans   &trans                                              &trans
             >;
         };
 
@@ -197,10 +197,10 @@
 
         NUM_WIN {
             bindings = <
-&kp N7           &kp N8        &kp N9        &kp JP_EQUAL     &kp PERCENT                                &kp HASH          &kp JP_AT          &kp JP_DQUOTE    &kp JP_QUOTE      &kp DOLLAR
-&kp NUMBER_4     &kp N5        &kp NUMBER_6  &kp JP_PLUS      &kp MINUS    &none          &kp LESS_THAN  &kp GREATER_THAN  &kp JP_LBRACKET    &kp JP_RBRACKET  &kp JP_CARET      &kp JP_TILDE
-&kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp JP_ASTERISK  &kp SLASH    &kp COMMA      &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_UNDERSCORE  &none            &kp JP_AMPERSAND  &kp JP_BACKSLASH
-&mt LEFT_GUI N0  &kp PERIOD    &kp JP_COLON  &trans           &trans       &trans         &trans         &trans                                                                  &kp JP_PIPE
+&kp N7           &kp N8           &kp N9        &kp JP_EQUAL     &kp PERCENT                                &kp HASH          &kp JP_AT          &kp JP_DQUOTE    &kp JP_QUOTE      &kp DOLLAR
+&kp NUMBER_4     &kp N5           &kp NUMBER_6  &kp JP_PLUS      &kp MINUS    &none          &kp LESS_THAN  &kp GREATER_THAN  &kp JP_LBRACKET    &kp JP_RBRACKET  &kp JP_CARET      &kp JP_TILDE
+&kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3  &kp JP_ASTERISK  &kp SLASH    &kp COMMA      &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_UNDERSCORE  &none            &kp JP_AMPERSAND  &kp JP_BACKSLASH
+&mt LEFT_GUI N0  &mt LEFT_ALT N0  &kp JP_COLON  &trans           &trans       &trans         &trans         &trans                                                                  &kp JP_PIPE
             >;
         };
 
