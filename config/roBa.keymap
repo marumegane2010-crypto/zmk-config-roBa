@@ -65,6 +65,16 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        prev {
+            bindings = <&mkp MB4>;
+            key-positions = <18 19>;
+        };
+
+        next {
+            bindings = <&mkp MB5>;
+            key-positions = <19 20>;
+        };
     };
 
     macros {
