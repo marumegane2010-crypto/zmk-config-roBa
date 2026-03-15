@@ -69,11 +69,13 @@
         prev {
             bindings = <&mkp MB4>;
             key-positions = <18 19>;
+            layers = <2>;
         };
 
         next {
             bindings = <&mkp MB5>;
             key-positions = <19 20>;
+            layers = <2>;
         };
     };
 
