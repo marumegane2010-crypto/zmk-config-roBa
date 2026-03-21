@@ -65,18 +65,6 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
-
-        prev {
-            bindings = <&mkp MB4>;
-            key-positions = <18 19>;
-            layers = <2>;
-        };
-
-        next {
-            bindings = <&mkp MB5>;
-            key-positions = <19 20>;
-            layers = <2>;
-        };
     };
 
     macros {
@@ -162,10 +150,10 @@
 
         FUNCTION_MAC {
             bindings = <
-&kp F1                &kp F2              &kp F3         &kp F4             &kp F5                         &kp F6     &kp F7          &kp F8        &kp F9     &kp F10
-&trans                &kp LC(LEFT_ARROW)  &kp PAGE_UP    &kp LC(RIGHT)      &kp HOME  &trans      &kp F11  &kp LG(C)  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
-&kp LA(LEFT_CONTROL)  &kp LG(RA(LEFT))    &kp PAGE_DOWN  &kp LG(RA(RIGHT))  &kp END   &trans      &kp F12  &kp LG(V)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
-&kp LEFT_GUI          &trans              &trans         &trans             &trans    &trans      &trans   &trans                                              &trans
+&kp F1                &kp F2              &kp F3         &kp F4             &kp F5                         &kp F6    &kp F7          &kp F8        &kp F9     &kp F10
+&trans                &kp LC(LEFT_ARROW)  &kp PAGE_UP    &kp LC(RIGHT)      &kp HOME  &trans      &kp F11  &mkp MB4  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
+&kp LA(LEFT_CONTROL)  &kp LG(RA(LEFT))    &kp PAGE_DOWN  &kp LG(RA(RIGHT))  &kp END   &trans      &kp F12  &mkp MB5  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
+&kp LEFT_GUI          &trans              &trans         &trans             &trans    &trans      &trans   &trans                                             &trans
             >;
         };
 
