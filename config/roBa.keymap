@@ -159,10 +159,10 @@
 
         FUNCTION_WIN {
             bindings = <
-&kp F1            &kp F2        &kp F3          &kp F4  &kp F5                         &kp F6     &kp F7          &kp F8        &kp F9     &kp F10
-&none             &none         &kp PAGE_UP     &none   &kp HOME  &trans      &kp F11  &kp RC(C)  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
-&none             &none         &kp PAGE_DOWN   &none   &kp END   &trans      &kp F12  &kp LC(V)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT  &trans  &trans    &trans      &trans   &trans                                              &trans
+&kp F1            &kp F2        &kp F3          &kp F4  &kp F5                         &kp F6    &kp F7          &kp F8        &kp F9     &kp F10
+&none             &none         &kp PAGE_UP     &none   &kp HOME  &trans      &kp F11  &mkp MB4  &mkp MB1        &kp UP_ARROW  &mkp MB2   &mkp MB3
+&none             &none         &kp PAGE_DOWN   &none   &kp END   &trans      &kp F12  &mkp MB5  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT  &trans  &trans    &trans      &trans   &trans                                             &trans
             >;
         };
 
